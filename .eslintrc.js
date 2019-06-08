@@ -4,12 +4,15 @@ module.exports = {
     node: true,
   },
   extends: [
+    'airbnb',
     'plugin:vue/essential',
     '@vue/airbnb',
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'global-require': 0,
+    'semi': ['error', 'never'],
   },
   parserOptions: {
     parser: 'babel-eslint',

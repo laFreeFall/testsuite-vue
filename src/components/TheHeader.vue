@@ -174,7 +174,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'TheHeader',
@@ -192,7 +192,7 @@ export default {
         profile: false,
         signup: false,
       },
-    };
+    }
   },
 
   computed: {
@@ -210,8 +210,8 @@ export default {
       this.$auth.login({
         data: this.form,
         rememberMe: true,
-      });
-      this.popovers.login = false;
+      })
+      this.popovers.login = false
     },
 
     onSignupClick() {
@@ -222,14 +222,14 @@ export default {
         redirect: {
           name: 'home',
         },
-      });
-      this.popovers.signup = false;
+      })
+      this.popovers.signup = false
     },
 
     onLogoutClick() {
-      this.$auth.logout();
-      this.popovers.profile = false;
+      this.$auth.logout()
+      this.popovers.profile = false
     },
   },
-};
+}
 </script>
