@@ -46,36 +46,10 @@ export default {
     register() {
       console.log([this.email, this.password]);
       const app = this;
-      this.$auth.register({
-        data: {
-          name: app.name,
-          email: app.email,
-          password: app.password,
-        },
-        success() {
-          app.success = true;
-        },
-        error(resp) {
-          app.error = true;
-          app.errors = resp.response.data.errors;
-        },
-        redirect: null,
-      });
+
     },
     login() {
-      const app = this;
-      this.$auth.login({
-        data: {
-          email: app.email,
-          password: app.password,
-        },
-        success() {
-        },
-        error() {
-        },
-        rememberMe: true,
-        fetchUser: true,
-      });
+
     },
   },
 };
