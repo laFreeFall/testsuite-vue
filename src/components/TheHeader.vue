@@ -1,6 +1,6 @@
 <template>
   <v-toolbar dark color="primary">
-    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.stop="showSidebar"></v-toolbar-side-icon>
     <v-toolbar-title class="white--text">
       {{ title }}
     </v-toolbar-title>
@@ -174,7 +174,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'TheHeader',
@@ -195,16 +195,14 @@ export default {
     }
   },
 
-  computed: {
-    ...mapGetters([
-      'user',
-    ]),
-  },
-
   methods: {
     ...mapActions([
-      'updateLoggedUser',
+      'toggleSidebarStatus',
     ]),
+
+    showSidebar() {
+      this.toggleSidebarStatus(true)
+    },
 
     onLoginClick() {
       this.$auth.login({
